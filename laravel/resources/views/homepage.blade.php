@@ -42,7 +42,7 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<h2>Dockerfile Non ARG</h2>
+							<h2>Mysql not setting</h2>
 							<p>Another fine responsive<br />
 							site template freebie<br />
 							crafted by <a href="http://html5up.net">HTML5 UP</a>.</p>
