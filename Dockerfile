@@ -2,10 +2,6 @@ FROM richarvey/nginx-php-fpm:latest
 
 MAINTAINER Tod Shen <tod.shen@104.com.tw>
 
-ARG DB_HOST
-ARG DB_DATABASE
-ARG DB_USERNAME
-ARG DB_PASSWORD
 COPY nginx/default.conf /etc/nginx/sites-available/default.conf
 COPY laravel /var/www/html/laravel
 WORKDIR /var/www/html/laravel
