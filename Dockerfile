@@ -16,4 +16,3 @@ RUN sed -i "s/DB_USERNAME=homestead/DB_USERNAME=$DB_USERNAME/g" /var/www/html/la
 RUN sed -i "s/DB_PASSWORD=secret/DB_PASSWORD=$DB_PASSWORD/g" /var/www/html/laravel/.env
 RUN composer install
 RUN php artisan key:generate
-RUN php artisan migrate

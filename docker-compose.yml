@@ -1,6 +1,4 @@
 web:
-  env_file:
-    - .env
   build:
     dockerfile: Dockerfile
     args:
