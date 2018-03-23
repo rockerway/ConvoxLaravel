@@ -1,11 +1,6 @@
 web:
   build:
     dockerfile: Dockerfile
-    args:
-      DB_HOST: "${DB_HOST}"
-      DB_DATABASE: "${DB_DATABASE}"
-      DB_USERNAME: "${DB_USERNAME}"
-      DB_PASSWORD: "${DB_PASSWORD}"
   labels:
     - convox.port.443.protocol=https
   ports:
