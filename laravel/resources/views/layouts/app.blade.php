@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 </head>
 <body>
     <div id="app">
@@ -35,9 +36,15 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+                    @if(Auth::check())
+                        @if(Auth::user()->role_id == 1)
+                            {{ menu('admin', 'bootstrap') }}
+                        @elseif(Auth::user()->role_id ==3)
+                            {{ menu('advanced_user', 'bootstrap') }}
+                        @elseif(Auth::user()->role_id ==2)
+                            {{ menu('user', 'bootstrap') }}
+                        @endif
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -47,7 +54,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -70,11 +77,13 @@
                 </div>
             </div>
         </nav>
-
+        @yield('page_header')
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    @yield('javascript')
 </body>
 </html>

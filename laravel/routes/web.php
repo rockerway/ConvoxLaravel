@@ -11,21 +11,15 @@
 |
 */
 
-Route::middleware(['Auth'])->group(function(){
-    Route::namespace('Admin')->group(function(){
-        
-    });
+Route::get('/', 'HomeController@index');
 
-    Route::namespace('Customer')->group(function(){
-
-    });
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
 
+Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/login', 'Auth\LoginController@index')->name('login');
-Route::post('/login', 'Auth\LoginController@index')->name('logincheck');
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-Route::get('/forgotpassword', 'Auth\ForgotPasswordController@index')->name('password.request');
-Route::get('/register', 'Auth\RegisterController@index')->name('register');
-Route::post('/register', 'Auth\RegisterController@register')->name('registercheck');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('news', 'NewController');
+Route::resource('pages', 'PageController');
+Route::resource('posts', 'PostController');
