@@ -1,4 +1,5 @@
 sudo: required
+language: bash
 before_install: |
   curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip &&\
   sudo unzip /tmp/convox.zip -d /usr/local/bin
