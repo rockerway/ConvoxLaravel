@@ -8,6 +8,6 @@ after_success:
 notifications:
   slack:
     rooms:
-      - 104corp:IYsPMQMlzQSNSvBU9a1JM21h#travis_integration
+      - $SLACK_ACCOUNT:$SLACK_TOKEN#$SLACK_ROOM
     on_success: always
     on_failure: always
