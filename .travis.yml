@@ -6,6 +6,8 @@ before_install: |
 after_success:
   - convox deploy --app convoxapp --rack nongod/convoxrack
 notifications:
-  slack: 104corp:IYsPMQMlzQSNSvBU9a1JM21h
+  slack:
+    rooms:
+      - 104corp:IYsPMQMlzQSNSvBU9a1JM21h#travis_integration
     on_success: always
     on_failure: always
