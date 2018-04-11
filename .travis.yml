@@ -4,10 +4,7 @@ before_install: |
   curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip &&\
   sudo unzip /tmp/convox.zip -d /usr/local/bin
 after_success:
-  - convox deploy --app convoxapp --rack nongod/convoxrack
+- convox deploy --app convoxapp --rack nongod/convoxrack
 notifications:
   slack:
-    rooms:
-      - $SLACK_ACCOUNT:$SLACK_TOKEN#$SLACK_ROOM
-    on_success: always
-    on_failure: always
+    secure: gChl9DQsuaWuQ21XVN4SqUglAL6ct1trDfC7mrBRrhcsIO/lIAR/SblwGmkg0vxQA8mFR7Lc1ekSmbunqvilMAXf2Se35FYRN3rjV6K5aOonvmtnHllJR9qktnBUEiLzk8W78r+aZHJFhZHl1OnoNrK3HvZvHKz+soTIPyv+cIZqFt1cdJOD6qfJTOZuPc45GDKWXkUa4tR5jqIaHwt4cB/FYamoaOC2YJyh6jhcdE+O8TNKyaasBXsD4++GndPP+X7GRNPVyqKDi/1gRzXPxSAlaKwVde+GHi79agQ4dy1KLdg2z8Lxlvm8SDWhSA+elO3VpjkFwCSvKBhl/WzSu7vz93QnJwpMr4aEHrAlokeseXxl4c7CM6jGBLGwlnGiy79oerFOk2yCqP9ii/X7TGL6BUAEjsBbC4K2Wb88MeExC/xfa5+V/8oJ8BDK2Uvlqgl1koopoYSp8o6bGPNK6vUE23SMeWFN7Sd6077/sPr4x9au753slDvQ9t8tHTYiEhtWNO7BahFZisNjmPnQfYyhuRcYl1mUWvodOSrTpKyYWbPwlF96xC5xuPwfWyba/68EOH08PE5AVwk1rWfPpFC1nVetVayoqUXYAKKTM4KEwT+OEnjyMpzA5iVwjjWC3xE4BM92sZJl5MRApebPnZwHkrRcJemqAWfmVD3Ws7o=
