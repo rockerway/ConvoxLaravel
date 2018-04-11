@@ -8,6 +8,6 @@ after_success:
 notifications:
   slack:
     rooms:
-      - $SLACK_ACCOUNT:$SLACK_TOKEN#$SLACK_ROOM
+      - $SLACK_ROOM
     on_success: always
     on_failure: always
