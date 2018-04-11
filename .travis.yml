@@ -1,4 +1,6 @@
 sudo: required
+services:
+  - docker
 before_install: |
   curl -O https://bin.equinox.io/c/jewmwFCp7w9/convox-stable-linux-amd64.tgz &&\
   sudo tar zxvf convox-stable-linux-amd64.tgz -C /usr/local/bin
@@ -9,6 +11,6 @@ after_success:
 notifications:
   slack:
     rooms:
-      - $SLACK_ACCOUNT:$SLACK_TOKEN#SLACK_ROOM
+      - $SLACK_ACCOUNT:$SLACK_TOKEN#$SLACK_ROOM
     on_success: change
     on_failure: always
